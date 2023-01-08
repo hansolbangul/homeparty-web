@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { ThemeProvider } from '@emotion/react'
+import { darkTheme, lightTheme } from "./theme";
+import { GlobalStyle } from "./global";
+import { Snow } from "./Components/Snow";
+import { Main } from "./View/Main";
+import { Description } from "./View/Description";
+import { Map } from "./View/Map";
+import { Schedule } from "./View/Schedule";
+import { Gift } from "./View/Gift";
 
 function App() {
+  const [isDark, setIsDark] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+      <GlobalStyle />
+      <Snow />
+      <Main />
+    </ThemeProvider>
   );
 }
 
