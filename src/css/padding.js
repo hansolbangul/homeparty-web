@@ -14,6 +14,14 @@ export const margin_top_60 = {
     marginTop: '60px'
 }
 
+export const margin_top_20 = {
+    marginTop: '20px'
+}
+
 export const margin_top_14 = {
     marginTop: '14px'
+}
+
+export const padding_btn = {
+    padding: '12px 24px'
 }
